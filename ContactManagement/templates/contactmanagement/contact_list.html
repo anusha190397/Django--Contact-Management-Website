@@ -1,0 +1,49 @@
+<!-- contact_list.html -->
+{% extends 'contactmanagement/base.html' %}
+{% block title %}Contact List{% endblock title %}
+{% block main_content %}
+<body style="background-color: #e6f7ff";>
+<section class="container">
+    <div class="row justify-content-center text-center mt-6">
+        <div class="col-sm-8">
+            <h3>Contact Management</h3>
+        </div>
+    </div>
+    <div class="row justify-content-start text-center mt-3">
+        <div class="col-sm-1">
+            <a href="{% url 'new_contact_page' %}" class="btn btn-primary">Create a New Contact</a>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Contact Name</th>
+                <th>Email</th>
+                <th>Created Time</th>  
+                <th>Actions</th>          
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.created_time }}</td>
+                <td>
+                    <a href="{% url 'edit_contact' contact.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'delete_contact' contact.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="{% url 'view_contact' contact.id %}" class="btn btn-info btn-sm" style="background-color:Green">View Details</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="row justify-content-start text-center mt-4">
+        <div class="col-sm-12">
+            <p style="font-size: 14px;">@created by Anusha_Manchi</p>
+        </div>
+    </div>
+</section>
+{% endblock main_content %}

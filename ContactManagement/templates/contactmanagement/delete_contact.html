@@ -1,0 +1,21 @@
+<!-- delete_contact.html -->
+{% extends 'contactmanagement/base.html' %}
+{% block title %}Delete Contact{% endblock title %}
+{% block main_content %}
+<body style="background-color: #e6f7ff";>
+<section class="container">
+    <h3>Confirm Delete</h3>
+    <p>Are you sure you want to delete {{ contact.name }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'contact_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+
+    <div class="row justify-content-start text-center mt-4">
+        <div class="col-sm-12">
+            <p style="font-size: 14px;">@created by Anusha_Manchi</p>
+        </div>
+    </div>
+</section>
+{% endblock main_content %}
