@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a New Contact</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-color: #e6f7ff;">
-    <div style="text-align: center; padding: 20px;">
-        <h1>Create a Contact</h1>
+    <div class="container mt-5">
+        <div class="card mx-auto" style="max-width: 400px; padding: 20px;">
+            <h1 class="text-center mb-4">Create a Contact</h1>
 
-        <form method="post" action="{% url 'new_contact_page' %}" style="margin-top: 20px;">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary" style="background-color: red;">Submit</button>
-            <a href="{% url 'contact_list' %}" class="btn btn-danger" style="margin-left: 10px;">Cancel</a>
-        </form>
-    </div>
+            <form method="post" action="{% url 'new_contact_page' %}">
+                {% csrf_token %}
 
-    <div style="text-align: center; margin-top: 20px;">
-        <p style="font-size: 14px;">@created by Anusha_Manchi</p>
+                <!-- Display validation errors for each field -->
+                {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {% if field.errors %}
+                            <p class="text-danger">{{ field.errors|striptags }}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" style="background-color: red">Submit</button>
+                    <a href="{% url 'contact_list' %}" class="btn btn-secondary ml-2">Cancel</a>
+                    
+                </div>
+            </form>
+        </div>
+
+        <div class="text-center mt-4">
+            <p style="font-size: 14px;">@created by Anusha_Manchi</p>
+        </div>
     </div>
 </body>
 </html>
