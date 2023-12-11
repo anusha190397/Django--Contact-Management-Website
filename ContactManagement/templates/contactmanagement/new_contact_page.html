@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +8,9 @@
     <title>Create a New Contact</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body style="background-color: #EAC696;">
+<body style="background-image: url('{% static "img.jpg" %}'); background-size: cover;">
     <div class="container mt-5">
-        <div class="card mx-auto" style="max-width: 250px; padding: 25px;">
+        <div class="card mx-auto" style="max-width: 370px; padding: 20px;">
             <h2 class="text-center mb-4">Create a new Contact</h2>
 
             <form method="post" action="{% url 'new_contact_page' %}">
