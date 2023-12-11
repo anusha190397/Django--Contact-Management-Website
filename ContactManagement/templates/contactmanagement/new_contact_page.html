@@ -8,13 +8,13 @@
 </head>
 <body style="background-color: #EAC696;">
     <div class="container mt-5">
-        <div class="card mx-auto" style="max-width: 400px; padding: 20px;">
-            <h1 class="text-center mb-4">Create a Contact</h1>
+        <div class="card mx-auto" style="max-width: 250px; padding: 25px;">
+            <h2 class="text-center mb-4">Create a new Contact</h2>
 
             <form method="post" action="{% url 'new_contact_page' %}">
                 {% csrf_token %}
 
-                <!-- Display validation errors for each field -->
+        
                 {% for field in form %}
                     <div class="form-group">
                         {{ field.label_tag }}
@@ -27,7 +27,7 @@
 
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary" style="background-color: red">Submit</button>
-                    <a href="{% url 'home' %}" class="btn btn-secondary ml-2">Cancel</a>
+                    <a href="{% url 'contact_list' %}" class="btn btn-secondary ml-2">Cancel</a>
                     
                 </div>
             </form>
@@ -36,7 +36,7 @@
     <footer>
         <div class="row justify-content-start text-center mt-8">
             <div class="col-sm-12">
-                <p style="font-size: 18px; color: black; margin-bottom: 20px;">&#169created by Anusha_Manchi</p>
+                <p style="font-size: 18px; color: black; margin-bottom: 20px;">&#169created by Anusha_Manchi_Satish</p>
             </div>
         </div>
     </footer>

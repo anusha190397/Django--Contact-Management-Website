@@ -5,14 +5,14 @@
 <body style="background-color: #EAC696";>
 <section class="container">
     <div class="row justify-content-center text-center mt-5">
-        <div class="col-sm-4">
-            <h3 style="color: #9A3B3B;">Update Contact</h3>
+        <div class="col-sm-7">
+            <h2 style="color: #9A3B3B; font-family: "Fantasy", Helvetica, sans-serif;">Update Contact</h2>
         </div>
     </div>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary" style="background-color:Red">Submit</button>
+        <button type="submit" class="btn btn-primary" style="background-color:Blue">Submit</button>
         <a href="{% url 'contact_list' %}" class="btn btn-secondary">Cancel</a>
 
     </form>
@@ -20,7 +20,7 @@
     <footer>
         <div class="row justify-content-start text-center mt-8">
             <div class="col-sm-12">
-                <p style="font-size: 18px; color: black; margin-bottom: 20px;">&#169created by Anusha_Manchi</p>
+                <p style="font-size: 18px; color: black; margin-bottom: 20px;">&#169created by Anusha_Manchi_Satish</p>
             </div>
         </div>
     </footer>
