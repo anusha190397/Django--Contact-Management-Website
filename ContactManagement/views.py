@@ -4,8 +4,6 @@ from .models import Contact
 from .forms import ContactForm
 from django.utils import timezone
 
-# Create your views here.
-
 class Home(View):
     def get(self, request):
         columns = {
@@ -30,7 +28,6 @@ class NewContactPage(View):
     def post(self, request):
         form = ContactForm(request.POST)
         if form.is_valid():
-            # Set the created_time to the current timestamp before saving
             form.cleaned_data['created_time'] = timezone.now()
             form.save()
             return redirect('contact_list')
