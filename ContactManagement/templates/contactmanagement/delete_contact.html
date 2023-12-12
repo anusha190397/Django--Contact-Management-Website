@@ -1,16 +1,15 @@
 <!-- delete_contact.html -->
 {% extends 'contactmanagement/base.html' %}
-{% load static %}
 {% block title %}Delete Contact{% endblock title %}
 {% block main_content %}
-<body style="background-image: url('{% static "img.jpg" %}'); background-size: cover;">
+<body style="background-color: #EAC696";>
 <section class="container">
     <div class="row justify-content-center text-center mt-5">
         <div class="col-sm-7">
-            <h2 style="color: black; font-family: "Fantasy", Helvetica, sans-serif;">Confirm Delete</h2>
+            <h2 style="color: #9A3B3B; font-family: "Fantasy", Helvetica, sans-serif;">Confirm Delete</h2>
         </div>
     </div>
-    <p style="font-size: 24px">Are you sure you want to delete {{ contact.name }}?</p>
+    <p>Are you sure you want to delete {{ contact.name }}?</p>
     <form method="post">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Delete</button>

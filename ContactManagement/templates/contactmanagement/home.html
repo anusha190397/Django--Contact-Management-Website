@@ -3,25 +3,24 @@
 {% block title %}Home{% endblock title %}
 
 {% load static %}
-
 {% block main_content %}
-<body style="background-image: url('{% static "img.jpg" %}'); background-size: cover;">
+<body style="background-color: #EAC696";>
 <section class="container">
     <div class="row justify-content-center text-center mt-5">
         <div class="col-sm-7">
-            <h1 style="color: black; font-family: "Fantasy", Helvetica, sans-serif;">Welcome to Contact Management</h1>
+            <h1 style="color: #9A3B3B; font-family: "Fantasy", Helvetica, sans-serif;">Welcome to Contact Management</h1>
         </div>
     </div>
 
     <div class="row justify-content-start text-center mt-5">
         <div class="col-sm-2">
-            <a href="{% url 'new_contact_page' %}" class="btn btn-primary" style="background-color: black">Create a New Contact</a>
+            <a href="{% url 'new_contact_page' %}" class="btn btn-primary" style="background-color: #9A3B3B">Create a New Contact</a>
         </div>
     </div>
 
     <div class="row justify-content-start text-center mt-3">
         <div class="col-sm-12">
-            <table class="table table-bordered" style="color: black;">
+            <table class="table table-bordered" style="color: #9A3B3B;">
                 <thead>
                     <tr>
                         <th>Contact Name</th>
@@ -33,6 +32,10 @@
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <div style="text-align: center;">
+        <img src="{% static 'crud.jpg' %}" alt="Image Description">
     </div>
     <footer>
         <div class="row justify-content-start text-center mt-8">
