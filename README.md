@@ -14,11 +14,10 @@ Open your web browser and navigate to http://127.0.0.1:8000/ or http://localhost
 
 Technologies Used:
 
-Python
-Django
-HTML
-CSS
+Python,
+Django,
+HTML,
+CSS,
 Bootstrap
-Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
